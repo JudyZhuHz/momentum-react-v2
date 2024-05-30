@@ -12,6 +12,7 @@ export type CloseButtonPlacement = 'top-left' | 'top-right' | 'none';
 export type PlacementType = TippyProps['placement'];
 export type TriggerType = TippyProps['trigger'];
 export type PositioningStrategy = TippyProps['popperOptions']['strategy'];
+export type PopoverAria = TippyProps['aria'];
 
 /**
  * Popover instance interface abstracted from Tippy.js
@@ -177,4 +178,9 @@ export interface Props extends PopoverCommonStyleProps, Partial<LifecycleHooks> 
    * @default 'undefined'
    */
   firstFocusElement?: HTMLElement;
+
+  /**
+   * Role os the popup
+   */
+  role?: string;
 }
