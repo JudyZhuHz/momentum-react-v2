@@ -42,7 +42,11 @@ const MenuTrigger: FC<Props> = (props: Props) => {
 
   const menuTriggerType = triggerComponent.props?.['aria-haspopup'] || 'menu';
 
-  const { menuTriggerProps, menuProps } = useMenuTrigger({ type: menuTriggerType }, state, buttonRef);
+  const { menuTriggerProps, menuProps } = useMenuTrigger(
+    { type: menuTriggerType },
+    state,
+    buttonRef
+  );
 
   menuTriggerProps['aria-haspopup'] = menuTriggerProps['aria-haspopup'] || menuTriggerType;
 
@@ -126,6 +130,7 @@ const MenuTrigger: FC<Props> = (props: Props) => {
       onClickOutside={closeMenuTrigger}
       setInstance={setPopoverInstance}
       hideOnEsc={false}
+      role="menu"
       {...(keyboardProps as Omit<React.HTMLAttributes<HTMLElement>, 'color'>)}
     >
       <FocusScope restoreFocus contain>
