@@ -180,7 +180,7 @@ export interface Props extends PopoverCommonStyleProps, Partial<LifecycleHooks> 
   firstFocusElement?: HTMLElement;
 
   /**
-   * Role os the popup
+   * Role of the popover content
    */
   role?: string;
 }
